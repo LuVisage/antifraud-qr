@@ -12,133 +12,66 @@
     color: #fff;
     position: relative;
   }
-  /* 背景层：反诈大使照片，放在下半部分 */
+  /* 反诈大使照片：全屏铺满，居中显示 */
   .person {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 130%;
-    max-width: 750px;
-    height: 75%;
+    position: fixed; inset: 0;
     background-image: url("https://aka.doubaocdn.com/s/vKiQoakhSh");
     background-size: cover;
-    background-position: center top;
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 100%);
+    background-position: center 20%;
   }
-  /* 渐变遮罩 */
+  /* 渐变遮罩：上下压暗，中间保留人物 */
   .overlay {
     position: fixed; inset: 0;
     background: linear-gradient(180deg,
       #0a0e1a 0%,
-      rgba(10,14,26,0.95) 20%,
-      rgba(10,14,26,0.5) 45%,
-      rgba(10,14,26,0.3) 60%,
-      rgba(10,14,26,0.85) 85%,
+      rgba(10,14,26,0.85) 12%,
+      rgba(10,14,26,0.15) 35%,
+      rgba(10,14,26,0.1) 55%,
+      rgba(10,14,26,0.7) 82%,
       #0a0e1a 100%);
   }
-  /* 红色警示条 */
   .topbar {
-    position: fixed; top: 0; left: 0; right: 0;
-    height: 6px;
+    position: fixed; top: 0; left: 0; right: 0; height: 5px;
     background: linear-gradient(90deg, #d4202f, #ff4444, #d4202f);
     z-index: 10;
   }
-  /* 顶部标签 */
   .alert-tag {
-    position: fixed; top: 24px; left: 20px; z-index: 5;
+    position: fixed; top: 22px; left: 20px; z-index: 5;
     display: flex; align-items: center; gap: 8px;
-    background: rgba(212,32,47,0.15);
-    border: 1px solid rgba(212,32,47,0.4);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: #ff6b6b;
+    background: rgba(212,32,47,0.2);
+    border: 1px solid rgba(212,32,47,0.5);
+    padding: 5px 12px; border-radius: 20px;
+    font-size: 11px; letter-spacing: 2px; color: #ff6b6b;
   }
   .alert-tag .dot {
-    width: 6px; height: 6px;
-    background: #ff4444;
-    border-radius: 50%;
+    width: 6px; height: 6px; background: #ff4444; border-radius: 50%;
     animation: blink 1.5s infinite;
   }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-  /* 主标题区 */
   .title-area {
-    position: fixed; top: 80px; left: 24px; right: 24px; z-index: 5;
+    position: fixed; top: 70px; left: 22px; right: 22px; z-index: 5;
   }
   .title-area h1 {
-    font-size: 42px;
-    font-weight: 900;
-    line-height: 1.15;
-    letter-spacing: 1px;
+    font-size: 40px; font-weight: 900; line-height: 1.15; letter-spacing: 1px;
   }
-  .title-area h1 .red {
-    color: #ff3b30;
-    display: block;
-    text-shadow: 0 2px 20px rgba(255,59,48,0.3);
-  }
-  .title-area h1 .white {
-    display: block;
-    color: #fff;
-  }
-  .title-area .sub {
-    margin-top: 16px;
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 3px;
-  }
-  .title-area .rule {
-    margin-top: 14px;
-    width: 48px; height: 3px;
-    background: #ff3b30;
-  }
-  /* 底部区域 */
+  .title-area h1 .red { color: #ff3b30; display: block; text-shadow: 0 2px 16px rgba(0,0,0,0.6); }
+  .title-area h1 .white { display: block; color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,0.6); }
+  .title-area .rule { margin-top: 12px; width: 48px; height: 3px; background: #ff3b30; }
   .bottom {
     position: fixed; bottom: 0; left: 0; right: 0;
-    padding: 20px 24px 28px;
-    z-index: 5;
+    padding: 20px 22px 26px; z-index: 5;
   }
   .easter {
-    font-size: 13px;
-    color: #ffd34d;
-    line-height: 1.6;
-    margin-bottom: 14px;
-    padding-left: 10px;
-    border-left: 3px solid #ffd34d;
+    font-size: 13px; color: #ffd34d; line-height: 1.6;
+    margin-bottom: 12px; padding-left: 10px; border-left: 3px solid #ffd34d;
   }
-  .from {
-    font-size: 13px;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 16px;
-  }
+  .from { font-size: 12px; color: rgba(255,255,255,0.75); margin-bottom: 14px; }
   .from b { color: #fff; }
-  .slogans {
-    display: flex;
-    border-top: 1px solid rgba(255,255,255,0.15);
-    padding-top: 14px;
-  }
-  .slogans div {
-    flex: 1;
-    text-align: center;
-  }
-  .slogans div + div {
-    border-left: 1px solid rgba(255,255,255,0.15);
-  }
-  .slogans div b {
-    display: block;
-    font-size: 15px;
-    color: #ffd34d;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 2px;
-  }
-  .slogans div span {
-    font-size: 10px;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 1px;
-  }
+  .slogans { display: flex; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 12px; }
+  .slogans div { flex: 1; text-align: center; }
+  .slogans div + div { border-left: 1px solid rgba(255,255,255,0.15); }
+  .slogans div b { display: block; font-size: 14px; color: #ffd34d; font-weight: 700; letter-spacing: 2px; margin-bottom: 2px; }
+  .slogans div span { font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 1px; }
 </style>
 </head>
 <body>
@@ -151,7 +84,6 @@
       <span class="red">不要扫！</span>
       <span class="white">来历不明的二维码</span>
     </h1>
-    <div class="sub">ANTI-FRAUD WARNING</div>
     <div class="rule"></div>
   </div>
   <div class="bottom">
